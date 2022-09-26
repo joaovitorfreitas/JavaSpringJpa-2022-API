@@ -1,8 +1,10 @@
 package com.ApiSpringJpa.Api.Controller;
 
 
+import com.ApiSpringJpa.Api.Dto.PersonsDto;
 import com.ApiSpringJpa.Api.Model.Persons;
 import com.ApiSpringJpa.Api.Repository.PersonsRepository;
+import com.ApiSpringJpa.Api.Service.PersonsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,16 +18,16 @@ import java.util.List;
 @RequestMapping("/teste")
 public class TesteController {
 
-    private final PersonsRepository personrepository;
+    private final PersonsService personservice;
 
     @Autowired
-    public TesteController(PersonsRepository personrepository){
-        this.personrepository = personrepository;
+    public TesteController(PersonsService personservice){
+        this.personservice = personservice;
     }
 
     @GetMapping("/teste")
-    public List<Persons> oi(){
-        return this.personrepository.findAll();
+    public List<PersonsDto> oi(){
+        return this.personservice.findAll();
     }
 
 
