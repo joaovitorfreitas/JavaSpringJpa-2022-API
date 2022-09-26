@@ -1,8 +1,9 @@
 package com.ApiSpringJpa.Api.Repository;
 
+import com.ApiSpringJpa.Api.Model.Persons;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface PersonsRepository extends JpaRepository<PersonsRepository, Integer> {
+public interface PersonsRepository extends JpaRepository<Persons, Integer> {
 }
