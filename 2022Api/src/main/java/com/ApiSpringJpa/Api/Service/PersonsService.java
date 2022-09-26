@@ -6,6 +6,7 @@ import com.ApiSpringJpa.Api.Model.Persons;
 import com.ApiSpringJpa.Api.Repository.PersonsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -21,5 +22,22 @@ public class PersonsService {
         List<Persons> persons = personsRepository.findAll();
 
         return personsMapper.fromListModelToListDto(persons);
+    }
+
+    public PersonsDto FindById(Integer id){
+        Persons persons = personsRepository.findById(id).get();
+
+        return personsMapper.fromModeforDto(persons);
+    }
+
+    @Transactional
+    public PersonsDto Save(Persons persons){
+        return  personsMapper.fromModeforDto(personsRepository.save(persons));
+    }
+
+
+    @Transactional
+    public void Remove (Integer id){
+        personsRepository.deleteById(id);
     }
 }

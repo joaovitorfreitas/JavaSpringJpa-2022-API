@@ -20,6 +20,4 @@ public class UsersDto {
     private String password;
 
     private Boolean administrator;
-
-    private Persons Persons;
 }
