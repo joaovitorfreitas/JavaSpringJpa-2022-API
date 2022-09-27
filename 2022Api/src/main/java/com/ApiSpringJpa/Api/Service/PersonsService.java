@@ -1,6 +1,7 @@
 package com.ApiSpringJpa.Api.Service;
 
 import com.ApiSpringJpa.Api.Dto.PersonsDto;
+import com.ApiSpringJpa.Api.Dto.PersonsResponse;
 import com.ApiSpringJpa.Api.Mapper.PersonsMapper;
 import com.ApiSpringJpa.Api.Model.Persons;
 import com.ApiSpringJpa.Api.Repository.PersonsRepository;

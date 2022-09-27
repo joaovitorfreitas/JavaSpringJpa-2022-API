@@ -1,27 +1,20 @@
-package com.ApiSpringJpa.Api.Model;
+package com.ApiSpringJpa.Api.Dto;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
+
+import com.ApiSpringJpa.Api.Model.Users;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import javax.persistence.*;
-
-
-
 @Getter
 @Setter
-@AllArgsConstructor
 @NoArgsConstructor
-@Entity
-public class Persons {
+@AllArgsConstructor
+public class PersonsResponse {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer IDPERSONS;
 
-    @Column(unique = true)
     private String cpf;
 
     private String name;
@@ -40,8 +33,5 @@ public class Persons {
 
     private String rg;
 
-    @JsonIgnore
-    @OneToOne
-    @JoinColumn(name = "IDUSERS")
-    private Users users;
+    private Integer users;
 }
