@@ -20,13 +20,9 @@ public class PersonsMapper {
         return mapper.map(persons, PersonsDto.class);
     }
 
-//    public PersonsResponse fromModeforResponse(Persons persons){
-//
-//        Users users = new Users();
-//
-//
-//        return
-//    }
+    public PersonsResponse fromModeforResponse(Persons persons){
+        return mapper.map(persons, PersonsResponse.class);
+    }
 
     public List<PersonsDto> fromListModelToListDto(List<Persons> persons){
         return persons.stream().map(persons1 -> fromModeforDto(persons1)).collect(Collectors.toList());

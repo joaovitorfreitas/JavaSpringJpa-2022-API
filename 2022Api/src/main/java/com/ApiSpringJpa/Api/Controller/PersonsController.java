@@ -21,7 +21,13 @@ public class PersonsController {
         this.personsService = personsService;
     }
 
-    @PostMapping("/Criarperson")
+
+    @DeleteMapping("/DeletarPerso/{id}")
+    public void Deletar(@PathVariable Integer id){
+        this.personsService.Remove(id);
+    }
+
+    @PostMapping("/CriarPerso")
     public PersonsDto CadastrarPerson(@RequestBody Persons persons){
         return this.personsService.Save(persons);
     }
@@ -32,8 +38,25 @@ public class PersonsController {
     }
 
     @GetMapping("/PegarPessoa/{id}")
-    public PersonsDto PegarUsuario(@PathVariable Integer id){
+    public PersonsDto PegarPessoa(@PathVariable Integer id){
         return this.personsService.FindById(id);
+    }
+
+    @GetMapping("/BuscarPessoaNome/{name}")
+    public PersonsDto PegarPessoaNome(@PathVariable String name){
+
+        return this.personsService.FindbyName(name);
+    }
+
+    @GetMapping("/BuscarPessoaCpf/{cpf}")
+    public PersonsDto PegarPessoaCpf(@PathVariable String cpf){
+
+        return this.personsService.FindbyCpf(cpf);
+    }
+
+    @PutMapping("/AlterarPessoa/{id}")
+    public PersonsDto AlterarPessoa(@PathVariable Integer id, @RequestBody Persons persons){
+        return  this.personsService.Update(id, persons);
     }
 
 }

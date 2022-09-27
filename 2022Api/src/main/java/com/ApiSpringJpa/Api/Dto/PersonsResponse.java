@@ -33,5 +33,5 @@ public class PersonsResponse {
 
     private String rg;
 
-    private Integer users;
+    private Users users;
 }

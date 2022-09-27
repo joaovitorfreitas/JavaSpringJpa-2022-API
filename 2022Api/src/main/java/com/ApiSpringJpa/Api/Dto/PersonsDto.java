@@ -1,6 +1,10 @@
 package com.ApiSpringJpa.Api.Dto;
 
 import com.ApiSpringJpa.Api.Model.Users;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -10,9 +14,10 @@ import lombok.Setter;
 
 @Getter
 @Setter
-@NoArgsConstructor
-@AllArgsConstructor
 public class PersonsDto {
+
+   public PersonsDto(){
+   }
 
     private Integer IDPERSONS;
 
@@ -34,5 +39,6 @@ public class PersonsDto {
 
     private String rg;
 
-    private Users users;
+    private UsersDto users;
+
 }

@@ -40,6 +40,4 @@ public class UsersControllers {
     public UsersDto PegarUsuario(@PathVariable Integer id){
         return this.usersService.FindById(id);
     }
-
-
 }

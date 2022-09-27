@@ -6,4 +6,9 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface PersonsRepository extends JpaRepository<Persons, Integer> {
+
+    public Persons findByCpf(String cpf);
+
+    public Persons findByName(String name);
+
 }
