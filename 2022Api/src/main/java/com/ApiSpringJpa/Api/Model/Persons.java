@@ -1,10 +1,5 @@
 package com.ApiSpringJpa.Api.Model;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
-import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
-import com.fasterxml.jackson.databind.deser.BeanDeserializer;
-import com.fasterxml.jackson.databind.ser.BeanSerializer;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -42,7 +37,8 @@ public class Persons {
 
     private String rg;
 
-    @OneToOne
-    @JoinColumn(name = "IDUSERS")
+    //@OneToOne
+    //@JoinColumn(name = "IDUSERS")
+    @OneToOne(mappedBy = "Persons")
     private Users users;
 }

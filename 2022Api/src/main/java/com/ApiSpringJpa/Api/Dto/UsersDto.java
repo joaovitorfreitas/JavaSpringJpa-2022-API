@@ -22,4 +22,5 @@ public class UsersDto {
 
     private Boolean administrator;
 
+    private PersonsDto persons;
 }

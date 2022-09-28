@@ -16,9 +16,6 @@ import lombok.Setter;
 @Setter
 public class PersonsDto {
 
-   public PersonsDto(){
-   }
-
     private Integer IDPERSONS;
 
     private String cpf;
@@ -38,7 +35,5 @@ public class PersonsDto {
     private String uf;
 
     private String rg;
-
-    private UsersDto users;
 
 }

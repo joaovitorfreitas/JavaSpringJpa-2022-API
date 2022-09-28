@@ -59,7 +59,6 @@ public class PersonsService {
 
     Persons pers = personsRepository.findById(Id).get();
 
-    pers.setUsers(persons.getUsers());
     pers.setComplement(persons.getComplement());
     pers.setCounty(persons.getCounty());
     pers.setCpf(persons.getCpf());

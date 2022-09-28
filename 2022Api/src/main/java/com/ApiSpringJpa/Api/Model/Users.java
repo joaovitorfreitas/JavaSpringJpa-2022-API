@@ -25,7 +25,9 @@ public class Users {
 
     private Boolean administrator;
 
-    @OneToOne(mappedBy = "users")
+  //  @OneToOne(mappedBy = "users")
+    @OneToOne()
+    @JoinColumn(name = "IDPERSONS")
     private Persons Persons;
 
 }
