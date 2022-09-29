@@ -5,6 +5,7 @@ import com.ApiSpringJpa.Api.Mapper.UsersMapper;
 import com.ApiSpringJpa.Api.Model.Users;
 import com.ApiSpringJpa.Api.Repository.UsersRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -33,12 +34,14 @@ public class UsersService {
 
     @Transactional
     public UsersDto Save(Users users){
+        users.setPassword(new BCryptPasswordEncoder().encode(users.getPassword()));
 
         return  usersMapper.fromModeforDto(usersRepository.save(users));
     }
 
     @Transactional
     public void Remove (Integer id){
+
         usersRepository.deleteById(id);
     }
 }

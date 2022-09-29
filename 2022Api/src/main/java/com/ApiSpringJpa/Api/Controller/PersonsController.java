@@ -5,7 +5,12 @@ import com.ApiSpringJpa.Api.Dto.PersonsResponse;
 import com.ApiSpringJpa.Api.Dto.UsersDto;
 import com.ApiSpringJpa.Api.Model.Persons;
 import com.ApiSpringJpa.Api.Service.PersonsService;
+import lombok.Getter;
+import lombok.Setter;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
+import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -32,6 +37,7 @@ public class PersonsController {
         return this.personsService.Save(persons);
     }
 
+ //   @PreAuthorize("hasRole('USER')")
     @GetMapping("/ListarPerson")
     public List<PersonsDto> ListarPerson(){
         return this.personsService.findAll();

@@ -3,7 +3,11 @@ package com.ApiSpringJpa.Api.Controller;
 import com.ApiSpringJpa.Api.Dto.UsersDto;
 import com.ApiSpringJpa.Api.Model.Users;
 import com.ApiSpringJpa.Api.Service.UsersService;
+import lombok.Getter;
+import lombok.Setter;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -26,6 +30,7 @@ public class UsersControllers {
         return this.usersService.Save(users);
     }
 
+    // @PreAuthorize("hasRole('ADMIN')")
     @GetMapping("/ListarNovo")
     public List<UsersDto> Listar(){
         return this.usersService.findAll();
